@@ -1,0 +1,12 @@
+Python codes 'accel_plane_ortho_wb_v2.py', 'run_wb_v2.py', and 'accel_ortho_wb_v2.py' are revised versions of 'accel_plane_ortho_wb.py', 'run_wb.py', and 'accel_ortho_wb.py' at doi:105281/zenodo.8065875.
+
+This revision is relatively minor and deals with the following three aspects.
+(1) The requirement for two distances to match within a certain uncertainty includes a maximum possible distance between the two components based on the sky-projected separation.
+(2) The requirement for two radial velocities to match within a certain uncertainty includes a maximum possible relative velocity between the two components based on the sky-projected velocity.
+(3) The user can choose a cut on the relative uncertainty of distances. (In the original version, only a cut on proper motions is allowed.) In this way, one can choose a cleaner sample.
+
+The user is strongly encouraged to read carefully Chae, K.-H. 2023, to be published in the Astrophysical Journal (arXiv:2305.04613) before using these codes.
+
+Questions can be directed to kyuhyunchae@gmail.com or chae@sejong.ac.kr.
+
+Last updated 2023-08-21.

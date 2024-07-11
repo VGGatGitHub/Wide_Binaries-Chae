@@ -1,0 +1,17 @@
+A wide binary sample within 200 pc, a virtual Newtonian sample, and several python scripts are provided to supplement Chae, K.-H. 2023, to be published in the Astrophysical Journal (arXiv:2305.04613).
+
+'gaia_dr3_MSMS_d200pc.csv' is the sample of wide binaries extracted from Gaia DR3 (El-Badry, Rix, & Heintz 2021). It includes all information needed for statistical analyses.
+
+A virtual Newtonian sample 'Newton_dr3_MSMS_d200pc_1.csv' was generated with 'make_Newton_sample_gaia.py'. The user can generate his/her own Newtonian sample.
+
+A mass-magnitude (and inverse) relation is needed as an input. Three options are provided.
+
+'accel_plane_ortho_wb.py' can be used to produce figures from one Monte Carlo set. The user is encouraged to start with this code to have a feel for what is going on.
+
+'run_wb.py', based on the python class 'accel_ortho_wb.py', calculates an ensemble of Monte Carlo sets of accelerations. It uses 'multiprocessing' and requires a significant number of cores. The author has been using 128 cores/threads.
+
+The user is strongly encouraged to read carefully Chae, K.-H. 2023, to be published in the Astrophysical Journal (arXiv:2305.04613) before using these codes.
+
+Questions can be directed to kyuhyunchae@gmail.com or chae@sejong.ac.kr.
+
+Last updated 2023-06-21.
