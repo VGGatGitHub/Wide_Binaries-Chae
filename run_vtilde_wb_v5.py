@@ -1,9 +1,15 @@
-# This code generates an ensemble of Monte Carlo (MC) sets of normalized velocity profile data (vtilde[:=v_p/v_c], s/r_M) for a sample of wide binaries. It also calculates a control ensemble for a virtual Newtonian sample with Gaia proper motions replaced by the Newtonian predicted values. It uses a python class 'vtilde_wb_v5' from the file 'vtilde_wb_v5.py'.
+# This code generates an ensemble of Monte Carlo (MC) sets of normalized velocity profile data (vtilde[:=v_p/v_c], s/r_M) for a sample of wide binaries. 
+# It also calculates a control ensemble for a virtual Newtonian sample with Gaia proper motions replaced by the Newtonian predicted values. 
+# It uses a python class 'vtilde_wb_v5' from the file 'vtilde_wb_v5.py'.
 # Here v_p is the sky-projected relative velocity between the pair, v_c is the theoretical Newtonian circular velocity for the sky-projected separaion s, and r_M is the MOND radius for the binary.
-# While 'plot_velprofile_oneMC.py' generates just one MC set for the input sample of binaries, this code generates as many MC sets as desired for the input sample and the control (virtual) sample. However, only the medians of (vtilde, s/r_M) are recorded in the user-defined bins of log(s/r_M).
-# The user can define the input sample by choosing the parameter ranges and input options. The default choice is the `new sample' of the main reference below.
+# While 'plot_velprofile_oneMC.py' generates just one MC set for the input sample of binaries, this code generates as many MC sets as desired for the input sample and the control (virtual) sample. 
+# However, only the medians of (vtilde, s/r_M) are recorded in the user-defined bins of log(s/r_M).
+# The user can define the input sample by choosing the parameter ranges and input options. 
+# The default choice is the `new sample' of the main reference below.
 # The input file 'gaia_dr3_MSMS_d200pc.csv' was extracted from the El-Badry, Rix, & Heintz (2021) catalog.
-# The input file 'Newton_dr3_MSMS_d200pc_5.csv' is a virtual Newtonian sample generated with 'make_Newton_sample_gaia_v5.py' for f_multi = 0.43. It is the same as 'gaia_dr3_MSMS_d200pc.csv' except that proper motions were replaced by Newtonian predicted values. The user can also generate his/her own virtual Newtonian sample with 'make_Newton_sample_gaia_v5.py'. 
+# The input file 'Newton_dr3_MSMS_d200pc_5.csv' is a virtual Newtonian sample generated with 'make_Newton_sample_gaia_v5.py' for f_multi = 0.43. 
+# It is the same as 'gaia_dr3_MSMS_d200pc.csv' except that proper motions were replaced by Newtonian predicted values. 
+# The user can also generate his/her own virtual Newtonian sample with 'make_Newton_sample_gaia_v5.py'. 
 # Main reference: arXiv:2402.05720 (Chae, K.-H. 2024, submitted to the Astrophysical Journal).
 # Other references: (1) Astrophysical Journal, 952, 128 (Chae, K.-H. 2023)
 #                   (2) Astrophysical Journal, 960, 114 (Chae, K.-H. 2024)
@@ -62,7 +68,7 @@ Gboost = 1.  # boost factor for Newton's constant: It allows testing modified gr
 name_spec = '6bins'  # user-desired additional name tag
 ####################################### ################################################
 filename='gaia_dr3_MSMS_d200pc.csv'
-#filename='Newton_dr3_MSMS_d200pc_5.csv'  # no pmscatter
+filename='Newton_dr3_MSMS_d200pc_5.csv'  # no pmscatter
 
 junk_A, junk_B, R_chance, rp, d_A, d_A_err, d_B, d_B_err, MagG_A, MagG_B, M_A, M_B, mux_A, mux_A_err, muy_A, muy_A_err, mux_B, mux_B_err, muy_B, muy_B_err, RV_A, RV_A_err, RV_B, RV_B_err, gal_b, ruwe_A, ruwe_B, bp_rp_A, bp_rp_B, ra_A, dec_A, ra_B, dec_B, e, e0, e1, A_G_A, A_G_B = np.loadtxt(filename,skiprows=1,delimiter=',',unpack=True,dtype=float)
 

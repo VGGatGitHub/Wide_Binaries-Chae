@@ -1,10 +1,17 @@
-# This code generates an ensemble of Monte Carlo (MC) sets of acceleration data (g_N, g) for a sample of wide binaries. It also calculates a control ensemble of acceleration data (g_N, g) for a virtual Newtonian sample with Gaia proper motions replaced by the Newtonian predicted values. It uses a python class 'accel_ortho_wb_v3' from the file 'accel_ortho_wb_v3.py'
-# As in 'accel_plane_ortho_wb_v5.py', acceleration data are calculated from deprojected quantities in 3D space. While 'accel_plane_ortho_wb_v5.py' generates just one MC set, this code generates as many MC sets as desired. However, only the medians of the residuals are recorded.
-# The user can define the sample by choosing the parameter ranges and input options. The default choice is the `new sample' of arXiv:2402.05720.
+# This code generates an ensemble of Monte Carlo (MC) sets of acceleration data (g_N, g) for a sample of wide binaries. 
+# It also calculates a control ensemble of acceleration data (g_N, g) for a virtual Newtonian sample with Gaia proper motions replaced by the Newtonian predicted values. 
+# It uses a python class 'accel_ortho_wb_v3' from the file 'accel_ortho_wb_v3.py'
+# As in 'accel_plane_ortho_wb_v5.py', acceleration data are calculated from deprojected quantities in 3D space. 
+# While 'accel_plane_ortho_wb_v5.py' generates just one MC set, this code generates as many MC sets as desired. 
+# However, only the medians of the residuals are recorded.
+# The user can define the sample by choosing the parameter ranges and input options. 
+# The default choice is the `new sample' of arXiv:2402.05720.
 # The input file 'gaia_dr3_MSMS_d200pc.csv' was extracted from the El-Badry, Rix, & Heintz (2021) catalog.
-# The input file 'Newton_dr3_MSMS_d200pc_5.csv' is a virtual Newtonian sample generated with 'make_Newton_sample_gaia_5.py' for f_multi = 0.43. It is the same as 'gaia_dr3_MSMS_d200pc.csv' except that proper motions were replaced by Newtonian predicted values.
+# The input file 'Newton_dr3_MSMS_d200pc_5.csv' is a virtual Newtonian sample generated with 'make_Newton_sample_gaia_5.py' for f_multi = 0.43. 
+# It is the same as 'gaia_dr3_MSMS_d200pc.csv' except that proper motions were replaced by Newtonian predicted values.
 # Version 3 corrected a bug as described in Appendix A of Chae, K.-H. 2024 (Astrophysical Journal, 960, 114) and including more input options.
-# This is version 5 including a minor change in drwaing individual eccentricities as described Section 2.5 of arXiv:2402.05720 (Chae, K.-H. 2024, submitted to the Astrophysical Journal) 
+# This is version 5 including a minor change in drwaing individual eccentricities 
+# as described Section 2.5 of arXiv:2402.05720 (Chae, K.-H. 2024, submitted to the Astrophysical Journal) 
 # Questions can be directed to kyuhyunchae@gmail.com or chae@sejong.ac.kr.
 # Last modified February 13, 2024.
 
@@ -62,7 +69,7 @@ Gboost = 1.  # boost factor for Newton's constant: It allows testing modified gr
 name_spec = '3bins'  # user-desired additional name tag
 ####################################### ################################################
 filename='gaia_dr3_MSMS_d200pc.csv'
-#filename='Newton_dr3_MSMS_d200pc_5.csv'  # no pmscatter
+filename='Newton_dr3_MSMS_d200pc_5.csv'  # no pmscatter
 
 junk_A, junk_B, R_chance, rp, d_A, d_A_err, d_B, d_B_err, MagG_A, MagG_B, M_A, M_B, mux_A, mux_A_err, muy_A, muy_A_err, mux_B, mux_B_err, muy_B, muy_B_err, RV_A, RV_A_err, RV_B, RV_B_err, gal_b, ruwe_A, ruwe_B, bp_rp_A, bp_rp_B, ra_A, dec_A, ra_B, dec_B, e, e0, e1, A_G_A, A_G_B = np.loadtxt(filename,skiprows=1,delimiter=',',unpack=True,dtype=float)
 

@@ -1,4 +1,5 @@
-# This code generates a distribution of normalized velocity vtilde := v_p/v_c with respect to normalized separation s/r_M for a wide binary sample. Here v_p is the sky-projected relative velocity between the pair, v_c is the theoretical Newtonian circular velocity for the sky-projected separaion s, and r_M is the MOND radius for the binary.
+# This code generates a distribution of normalized velocity vtilde := v_p/v_c with respect to normalized separation s/r_M for a wide binary sample. 
+# Here v_p is the sky-projected relative velocity between the pair, v_c is the theoretical Newtonian circular velocity for the sky-projected separaion s, and r_M is the MOND radius for the binary.
 # Three auxiliary figures are also generated.
 # The total mass of the binary is assigned through a Monte Carlo method including hidden close star(s).
 # The user can define the sample to be plotted by setting the parameter ranges in lines 55 -- 58 and 170 -- 181. The default choice is the `new sample' of the main reference below.
@@ -15,6 +16,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import gridspec
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+import scipy.integrate as integrate #VGG
 import time
 
 def dsq(p,*args):
@@ -48,7 +50,7 @@ Msun=1.989e30   # Msolar in kg
 au=1.4959787e11      # AU in m
 
 filename='gaia_dr3_MSMS_d200pc.csv'
-#filename='Newton_dr3_MSMS_d200pc_5.csv'  # no pmscatter  f_multi = 0.43
+filename='Newton_dr3_MSMS_d200pc_5.csv'  # no pmscatter  f_multi = 0.43
 junk1, junk2, R_chance, rp, d_A, d_A_err, d_B, d_B_err, MagG_A, MagG_B, M_A, M_B, mux_A, mux_A_err, muy_A, muy_A_err, mux_B, mux_B_err, muy_B, muy_B_err, RV_A, RV_A_err, RV_B, RV_B_err, gal_b, ruwe_A, ruwe_B, bp_rp_A, bp_rp_B, ra_A, dec_A, ra_B, dec_B, e, e0, e1, A_G_A, A_G_B = np.loadtxt(filename,skiprows=1,delimiter=',',unpack=True,dtype=float)
 
 ### set the preliminary parameters #################################################################

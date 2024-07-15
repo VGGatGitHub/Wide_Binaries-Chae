@@ -1,13 +1,22 @@
-# This code generates two figures for a wide binary sample: projected velocity (v_p) vs projected separation (s), and kinematic acceleration (g) vs Newtonian acceleration (g_N).
-# Accelerations are calculated from Monte Carlo deprojected 3D velocities and separations. Thus, the g_N-g relation varies from one result to another due to randomness of the deprojection.
-# The user can define the sample to be plotted by setting the parameter ranges in lines 82--83, 372 - 386. Extinction correction can be turned on/off in line 83. When it is 'True', data only with declination > -28deg are used. The default choice is the `new sample' of arXiv:2402.05720.
+# This code generates two figures for a wide binary sample: 
+# projected velocity (v_p) vs projected separation (s), 
+# and kinematic acceleration (g) vs Newtonian acceleration (g_N).
+# Accelerations are calculated from Monte Carlo deprojected 3D velocities and separations. 
+# Thus, the g_N-g relation varies from one result to another due to randomness of the deprojection.
+# The user can define the sample to be plotted by setting the parameter ranges in lines 82--83, 372 - 386. 
+# Extinction correction can be turned on/off in line 83. 
+# When it is 'True', data only with declination > -28deg are used. 
+# The default choice is the `new sample' of arXiv:2402.05720.
 # The input file 'gaia_dr3_MSMS_d200pc.csv' was extracted from the El-Badry, Rix, & Heintz (2021) catalog.
-# The user can also use a virtual Newtonian sample rather than a Gaia sample: a sample from either Newtonian cicular or Newtonian elliptical orbits is allowed. 
+# The user can also use a virtual Newtonian sample rather than a Gaia sample: 
+# a sample from either Newtonian cicular or Newtonian elliptical orbits is allowed. 
 # A mass-magnitude relation is needed. Three options are possible.
-# The user needs to choose a value for the higher-order multiplicity fraction f_multi. E.g., f_multi = 0.5 means that 50% of binaries are randomly assigned close hidden companions for either component or for both components.
+# The user needs to choose a value for the higher-order multiplicity fraction f_multi. 
+# E.g., f_multi = 0.5 means that 50% of binaries are randomly assigned close hidden companions for either component or for both components.
 # For further information see: Chae, K.-H. 2023 (Astrophysical Journal, 952, 128).
 # Version 3 corrected a bug as described in Appendix A of Chae, K.-H. 2024 (Astrophysical Journal, 960, 114) and including more input options.
-# This is version 5 including a minor change in drwaing individual eccentricities as described Section 2.5 of arXiv:2402.05720 (Chae, K.-H. 2024, submitted to the Astrophysical Journal) 
+# This is version 5 including a minor change in drwaing individual eccentricities 
+# as described Section 2.5 of arXiv:2402.05720 (Chae, K.-H. 2024, submitted to the Astrophysical Journal) 
 # Questions can be directed to kyuhyunchae@gmail.com or chae@sejong.ac.kr.
 # Last modified February 13, 2024.
 import numpy as np
